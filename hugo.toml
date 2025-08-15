@@ -17,6 +17,10 @@ theme = 'simple'
     url = "/posts/"
     weight = 20
   [[menu.main]]
+    name = "Topics"
+    url = "/topics/"
+    weight = 25
+  [[menu.main]]
     name = "About"
     url = "/about/"
     weight = 30
