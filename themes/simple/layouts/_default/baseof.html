@@ -32,16 +32,23 @@
             <div class="nav-container">
                 <a href="{{ "/" | relURL }}" class="nav-brand">{{ .Site.Title }}</a>
                 <ul class="nav-menu">
-                    {{ range .Site.Menus.main }}
+                    {{ $currentMenu := .Site.Menus.main }}
+                    {{ range $currentMenu }}
                         {{ if not .Parent }}
-                        <li class="nav-item {{ if .HasChildren }}dropdown{{ end }}">
-                            <a href="{{ .URL | relURL }}" class="nav-link {{ if .HasChildren }}dropdown-toggle{{ end }}">
+                        {{ $hasChildren := false }}
+                        {{ range $currentMenu }}
+                            {{ if eq .Parent $.Name }}
+                                {{ $hasChildren = true }}
+                            {{ end }}
+                        {{ end }}
+                        <li class="nav-item {{ if $hasChildren }}dropdown{{ end }}">
+                            <a href="{{ .URL | relURL }}" class="nav-link {{ if $hasChildren }}dropdown-toggle{{ end }}">
                                 {{ .Name }}
-                                {{ if .HasChildren }}<span class="dropdown-arrow">▼</span>{{ end }}
+                                {{ if $hasChildren }}<span class="dropdown-arrow">▼</span>{{ end }}
                             </a>
-                            {{ if .HasChildren }}
+                            {{ if $hasChildren }}
                             <ul class="dropdown-menu">
-                                {{ range $.Site.Menus.main }}
+                                {{ range $currentMenu }}
                                     {{ if eq .Parent $.Name }}
                                     <li class="dropdown-item">
                                         <a href="{{ .URL | relURL }}" class="dropdown-link">{{ .Name }}</a>
