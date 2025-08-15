@@ -22,7 +22,6 @@ theme = 'simple'
     name = "Programming"
     url = "/topics/"
     weight = 30
-    hasChildren = true
   
   [[menu.main]]
     name = "Java"
