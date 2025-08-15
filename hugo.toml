@@ -19,11 +19,6 @@ theme = 'simple'
     weight = 20
   
   [[menu.main]]
-    name = "Programming"
-    url = "/topics/"
-    weight = 30
-  
-  [[menu.main]]
     name = "Java"
     url = "/topics/java/"
     parent = "Programming"
@@ -35,16 +30,6 @@ theme = 'simple'
     parent = "Programming"
     weight = 32
   
-  [[menu.main]]
-    name = "PHP"
-    url = "/topics/php/"
-    parent = "Programming"
-    weight = 33
-  
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 40
 
 [markup]
   [markup.goldmark]
