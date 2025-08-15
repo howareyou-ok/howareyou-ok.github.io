@@ -1,0 +1,12 @@
+name = "Simple"
+license = "MIT"
+licenselink = "https://github.com/b-gg/hugo-theme-simple/blob/main/LICENSE"
+description = "A simple and clean Hugo theme for B-GG.com"
+homepage = "https://github.com/b-gg/hugo-theme-simple"
+tags = ["blog", "simple", "clean", "responsive"]
+features = ["responsive", "syntax highlighting"]
+min_version = "0.41.0"
+
+[author]
+  name = "B-GG Team"
+  homepage = "https://b-gg.com"

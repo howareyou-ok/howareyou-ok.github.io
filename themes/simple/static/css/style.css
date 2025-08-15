@@ -1,0 +1,417 @@
+/* 基础样式 - 报纸风格 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background-color: #fefefe;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* 导航栏 - 报纸头版风格 */
+.navbar {
+    background-color: #000;
+    color: #fff;
+    padding: 0.8rem 0;
+    border-bottom: 3px solid #000;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ccc;
+}
+
+/* 首页英雄区域 - 报纸头条风格 */
+.hero {
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    border-bottom: 3px solid #000;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #000;
+    font-family: "Times New Roman", Times, serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-description {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-style: italic;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 文章网格 - 报纸版面风格 */
+.recent-posts {
+    padding: 3rem 0;
+}
+
+.recent-posts h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.5rem;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.post-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s;
+}
+
+.post-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.post-card h3 a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.post-summary {
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* 文章列表页 - 报纸目录风格 */
+.page-header {
+    padding: 2rem 0;
+    border-bottom: 3px solid #000;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.posts-list {
+    padding-bottom: 2rem;
+}
+
+.post-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-item:last-child {
+    border-bottom: none;
+}
+
+.post-item h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.post-item h2 a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post-item h2 a:hover {
+    text-decoration: underline;
+}
+
+/* 单篇文章页 - 报纸文章风格 */
+.post {
+    padding: 2rem 0;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #000;
+}
+
+.post-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: #000;
+    font-weight: bold;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+    margin: 2rem 0 1rem 0;
+    color: #000;
+    font-weight: bold;
+}
+
+.post-content h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.post-content h3 {
+    font-size: 1.4rem;
+}
+
+.post-content p {
+    margin-bottom: 1.2rem;
+}
+
+.post-content ul,
+.post-content ol {
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+.post-content blockquote {
+    border-left: 3px solid #000;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #555;
+}
+
+.post-content code {
+    background-color: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border: 1px solid #ddd;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+}
+
+.post-content pre {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+    margin-bottom: 1.2rem;
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+.post-footer {
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.post-tags {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.post-tags span {
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.tag {
+    background-color: #000;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tag:hover {
+    background-color: #333;
+}
+
+/* 页脚 - 报纸版权风格 */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    border-top: 3px solid #000;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .post-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .nav-container,
+    .hero-content,
+    .footer-container {
+        padding: 0 20px;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .navbar,
+    .hero,
+    footer {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .post-content {
+        font-size: 12pt;
+    }
+}

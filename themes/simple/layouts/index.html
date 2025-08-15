@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="hero">
+    <div class="hero-content">
+        <h1>{{ .Site.Title }}</h1>
+        <p class="hero-description">{{ .Site.Params.description }}</p>
+        <p class="hero-subtitle">Whether you're a complete beginner or a tech enthusiast, we break down complex tools and concepts into simple, step-by-step tutorials.</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="recent-posts">
+        <h2>Latest Articles</h2>
+        <div class="posts-grid">
+            {{ range first 6 (where .Site.RegularPages "Type" "posts") }}
+            <article class="post-card">
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p class="post-meta">{{ .Date.Format "January 2, 2006" }}</p>
+                <p class="post-summary">{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+            </article>
+            {{ end }}
+        </div>
+    </section>
+</div>
+{{ end }}
