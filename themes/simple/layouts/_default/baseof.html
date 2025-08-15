@@ -32,28 +32,20 @@
             <div class="nav-container">
                 <a href="{{ "/" | relURL }}" class="nav-brand">{{ .Site.Title }}</a>
                 <ul class="nav-menu">
-                    {{ $currentMenu := .Site.Menus.main }}
-                    {{ range $currentMenu }}
+                    {{ range .Site.Menus.main }}
                         {{ if not .Parent }}
-                        {{ $hasChildren := false }}
-                        {{ range $currentMenu }}
-                            {{ if eq .Parent $.Name }}
-                                {{ $hasChildren = true }}
-                            {{ end }}
-                        {{ end }}
-                        <li class="nav-item {{ if $hasChildren }}dropdown{{ end }}">
-                            <a href="{{ .URL | relURL }}" class="nav-link {{ if $hasChildren }}dropdown-toggle{{ end }}">
+                        <li class="nav-item dropdown">
+                            <a href="{{ .URL | relURL }}" class="nav-link dropdown-toggle">
                                 {{ .Name }}
-                                {{ if $hasChildren }}<span class="dropdown-arrow">▼</span>{{ end }}
+                                {{ $children := where $.Site.Menus.main "Parent" .Name }}
+                                {{ if $children }}<span class="dropdown-arrow">▼</span>{{ end }}
                             </a>
-                            {{ if $hasChildren }}
+                            {{ if $children }}
                             <ul class="dropdown-menu">
-                                {{ range $currentMenu }}
-                                    {{ if eq .Parent $.Name }}
-                                    <li class="dropdown-item">
-                                        <a href="{{ .URL | relURL }}" class="dropdown-link">{{ .Name }}</a>
-                                    </li>
-                                    {{ end }}
+                                {{ range $children }}
+                                <li class="dropdown-item">
+                                    <a href="{{ .URL | relURL }}" class="dropdown-link">{{ .Name }}</a>
+                                </li>
                                 {{ end }}
                             </ul>
                             {{ end }}
