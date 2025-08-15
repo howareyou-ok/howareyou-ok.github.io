@@ -482,53 +482,77 @@ footer {
 }
 
 @media (max-width: 768px) {
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-brand {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    order: -1; /* 确保 Logo 在最左侧 */
+    flex-shrink: 0;
+}
+
+.nav-brand:hover {
+    color: #333;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    font-family: 'Times New Roman', serif;
+    font-size: 1rem;
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    border-bottom-color: #000;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
         gap: 1rem;
     }
     
+    .nav-brand {
+        order: 0;
+        margin-bottom: 0.5rem;
+    }
+    
     .nav-menu {
         gap: 1.5rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .posts-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .post-header h1 {
-        font-size: 2.2rem;
-    }
-    
-    .container {
-        padding: 0 20px;
-    }
-    
-    .nav-container,
-    .hero-content,
-    .footer-container {
-        padding: 0 20px;
-    }
-    
-    .toc-sidebar {
-        display: none;
-    }
-    
-    .article-layout {
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
-
-/* 打印样式 */
-@media print {
-    .navbar,
-    .hero,
-    footer {
-        display: none;
-    }
     
     body {
         font-size: 12pt;
