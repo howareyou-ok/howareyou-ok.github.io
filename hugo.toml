@@ -1,4 +1,4 @@
-baseURL = 'https://b-gg.github.io'
+baseURL = 'https://b-gg.com'
 languageCode = 'en-us'
 title = 'Beyond Geek Guide'
 theme = 'simple'
@@ -25,3 +25,7 @@ theme = 'simple'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false

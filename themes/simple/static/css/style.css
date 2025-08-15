@@ -227,8 +227,75 @@ body {
 }
 
 /* 单篇文章页 - 报纸文章风格 */
-.post {
+.article-layout {
+    display: flex;
+    gap: 2rem;
     padding: 2rem 0;
+}
+
+.toc-sidebar {
+    flex: 0 0 250px;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.toc-container {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.toc-container h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.5rem;
+}
+
+.toc-content {
+    font-size: 0.9rem;
+}
+
+.toc-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.toc-content ul ul {
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+.toc-content li {
+    margin-bottom: 0.5rem;
+}
+
+.toc-content a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    border-left: 3px solid transparent;
+    padding-left: 0.5rem;
+    transition: all 0.3s;
+}
+
+.toc-content a:hover {
+    color: #000;
+    border-left-color: #000;
+    background-color: #f0f0f0;
+}
+
+.post {
+    flex: 1;
+    min-width: 0;
 }
 
 .post-header {
@@ -365,6 +432,24 @@ footer {
 }
 
 /* 响应式设计 */
+@media (max-width: 1024px) {
+    .article-layout {
+        flex-direction: column;
+    }
+    
+    .toc-sidebar {
+        flex: none;
+        position: static;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+    
+    .toc-container {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -395,6 +480,14 @@ footer {
     .hero-content,
     .footer-container {
         padding: 0 20px;
+    }
+    
+    .toc-sidebar {
+        display: none;
+    }
+    
+    .article-layout {
+        flex-direction: column;
     }
 }
 
