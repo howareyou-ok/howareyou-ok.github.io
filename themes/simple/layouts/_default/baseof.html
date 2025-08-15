@@ -31,19 +31,10 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="{{ "/" | relURL }}" class="nav-brand">{{ .Site.Title }}</a>
-                <!-- Debug: Site.Menus.main content -->
-                {{ if .Site.IsServer }}
-                <!-- DEBUG: All menu items -->
-                {{ range .Site.Menus.main }}
-                <!-- Menu: {{ .Name }} | URL: {{ .URL }} | Parent: {{ .Parent }} | Weight: {{ .Weight }} -->
-                {{ end }}
-                {{ end }}
-                
                 <ul class="nav-menu">
                     {{ range .Site.Menus.main }}
                         {{ if not .Parent }}
                         {{ $children := where $.Site.Menus.main "Parent" .Name }}
-                        <!-- DEBUG: Processing {{ .Name }}, Children count: {{ len $children }} -->
                         <li class="nav-item {{ if $children }}dropdown{{ end }}">
                             <a href="{{ .URL | relURL }}" class="nav-link {{ if $children }}dropdown-toggle{{ end }}">
                                 {{ .Name }}
@@ -52,7 +43,6 @@
                             {{ if $children }}
                             <ul class="dropdown-menu">
                                 {{ range $children }}
-                                <!-- DEBUG: Child menu: {{ .Name }} -->
                                 <li class="dropdown-item">
                                     <a href="{{ .URL | relURL }}" class="dropdown-link">{{ .Name }}</a>
                                 </li>
