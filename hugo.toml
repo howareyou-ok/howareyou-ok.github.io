@@ -12,14 +12,36 @@ theme = 'simple'
     name = "Home"
     url = "/"
     weight = 10
+  
   [[menu.main]]
-    name = "Posts"
+    name = "Tutorials"
     url = "/posts/"
     weight = 20
+  
   [[menu.main]]
-    name = "Topics"
+    name = "Programming"
     url = "/topics/"
     weight = 30
+    hasChildren = true
+  
+  [[menu.main]]
+    name = "Java"
+    url = "/topics/java/"
+    parent = "Programming"
+    weight = 31
+  
+  [[menu.main]]
+    name = "Go"
+    url = "/topics/golang/"
+    parent = "Programming"
+    weight = 32
+  
+  [[menu.main]]
+    name = "PHP"
+    url = "/topics/php/"
+    parent = "Programming"
+    weight = 33
+  
   [[menu.main]]
     name = "About"
     url = "/about/"
