@@ -4,8 +4,13 @@
         <!-- 左侧目录 -->
         <aside class="toc-sidebar">
             <div class="toc-container">
-                <h3>Table of Contents</h3>
-                <div class="toc-content">
+                <div class="toc-header">
+                    <h3>Table of Contents</h3>
+                    <button class="toc-toggle" onclick="toggleTOC()">
+                        <span class="toc-toggle-icon">−</span>
+                    </button>
+                </div>
+                <div class="toc-content" id="toc-content">
                     {{ .TableOfContents }}
                 </div>
             </div>

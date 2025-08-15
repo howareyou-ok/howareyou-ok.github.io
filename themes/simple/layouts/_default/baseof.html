@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
+    <script>
+        function toggleTOC() {
+            const tocContent = document.getElementById('toc-content');
+            const tocToggle = document.querySelector('.toc-toggle-icon');
+            const tocContainer = document.querySelector('.toc-container');
+            
+            if (tocContent.style.display === 'none') {
+                tocContent.style.display = 'block';
+                tocToggle.textContent = '−';
+                tocContainer.classList.remove('collapsed');
+            } else {
+                tocContent.style.display = 'none';
+                tocToggle.textContent = '+';
+                tocContainer.classList.add('collapsed');
+            }
+        }
+    </script>
     <header>
         <nav class="navbar">
             <div class="nav-container">
