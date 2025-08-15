@@ -34,10 +34,10 @@
                 <ul class="nav-menu">
                     {{ range .Site.Menus.main }}
                         {{ if not .Parent }}
-                        <li class="nav-item dropdown">
-                            <a href="{{ .URL | relURL }}" class="nav-link dropdown-toggle">
+                        {{ $children := where $.Site.Menus.main "Parent" .Name }}
+                        <li class="nav-item {{ if $children }}dropdown{{ end }}">
+                            <a href="{{ .URL | relURL }}" class="nav-link {{ if $children }}dropdown-toggle{{ end }}">
                                 {{ .Name }}
-                                {{ $children := where $.Site.Menus.main "Parent" .Name }}
                                 {{ if $children }}<span class="dropdown-arrow">▼</span>{{ end }}
                             </a>
                             {{ if $children }}
